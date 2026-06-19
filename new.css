@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Logo */
+.Logo{
+    color: rgb(255, 255, 255);
+    padding: 0 10% 0 10%;
+}
+/* ui navbar */
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: coral;
+}
+ul li {
+    float: left;
+}
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+ul li a:hover {
+    background-color: rgb(220, 170, 41);
+}
+
+/* --- โครงสร้างพื้นฐานหน้าข่าวสาร --- */
+.news-container {
+  padding: 60px 20px;
+}
+
+.news-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ส่วนหัวข้อ */
+.news-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.news-header h1 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.news-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* --- 🔥 สไตล์การ์ดข่าวเด่น (Featured Card) --- */
+.featured-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column; /* หน้าจอมือถือให้เรียงรูปภาพลงมาข้อความ */
+  transition: transform 0.3s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-3px);
+}
+
+/* --- 📦 ระบบ Grid รูปภาพ 4 รูปด้านซ้าย --- */
+.featured-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ซ้ายขวา */
+  gap: 4px;                              /* ระยะห่างเส้นสีขาวบางๆ ระหว่างรูป */
+  background-color: #ffffff;             /* สีเส้นคั่นระหว่างรูป */
+  width: 100%;
+}
+
+.grid-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;                  /* ⭐️ บังคับให้รูปเป็นสี่เหลี่ยมจัตุรัสเท่ากันทุกรูป */
+  object-fit: cover;                    /* ⭐️ ตัดสัดส่วนรูปภาพอัตโนมัติ ไม่ให้เบี้ยว ยืด หรือหด */
+  display: block;
+}
+
+/* โซนข้อความรายละเอียด */
+.featured-info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-info h2 {
+  font-size: 1.8rem;
+  color: #111;
+  margin: 15px 0;
+  line-height: 1.4;
+}
+
+.featured-info p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+/* --- 🏷️ แท็กสถานะและวันที่ --- */
+.news-tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tag-promo { 
+  background-color: #ffece6; 
+  color: coral; 
+}
+
+.news-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* --- 🔗 ปุ่มกดอ่านต่อ --- */
+.btn-readmore {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: coral;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.btn-readmore:hover {
+  background-color: #e66e47;
+}
+
+/* --- 📱 Responsive สำหรับหน้าจอคอมพิวเตอร์ (Desktop) --- */
+@media (min-width: 992px) {
+  .featured-card {
+    flex-direction: row; /* เปลี่ยนมาเรียงแนวนอน ซ้ายรูป-ขวาข้อความ */
+  }
+  
+  .featured-image-grid {
+    width: 50%;         /* บีบให้ระบบ Grid รูปภาพคุมพื้นที่ 50% ของการ์ด */
+  }
+  
+  .featured-info {
+    width: 50%;         /* บีบให้ข้อความคุมพื้นที่ 50% ของการ์ด */
+    padding: 50px;
+  }
+}

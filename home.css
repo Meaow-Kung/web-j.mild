@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Logo */
+.Logo{
+    color: rgb(255, 255, 255);
+    padding: 0 10% 0 10%;
+}
+/* ui navbar */
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: coral;
+}
+ul li {
+    float: left;
+}
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+ul li a:hover {
+    background-color: rgb(220, 170, 41);
+}
+
+/* --- ส่วนเนื้อหาหลักและการเลื่อนกล่องแมวลงมา --- */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* เลื่อนโซนรูปแมวลงมาห่างจากแถบเมนูข้างบน */
+.cat-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-top: 50px; /* เพิ่มช่องว่างด้านบนตรงนี้เพื่อเลื่อนกล่องแมวลงมา */
+    margin-bottom: 40px;
+}
+
+/* การ์ดแมวแต่ละตัว */
+.cat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-box {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: coral;
+    border: 5px solid coral;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.label-box {
+    width: 100%;
+    background-color: coral;
+    border: 4px solid coral;
+    border-radius: 12px;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* กล่องป้ายชื่อแมวเมื่อเมาส์มาชี้ (Hover Effect) */
+.label-box:hover {
+    background-color: #f07848; /* เปลี่ยนเป็นสีส้มเข้มขึ้น */
+    border-color: #000000;      /* เปลี่ยนขอบเป็นสีดำเข้ม */
+    color: #ffffff;            /* เปลี่ยนสีตัวหนังสือเป็นสีขาวเพื่อให้เด่นชัด */
+    transform: translateY(-3px); /* เพิ่มลูกเล่นให้กล่องลอยขึ้นมาเล็กน้อย */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* เพิ่มเงาด้านล่างตอนลอย */
+}
+
+/* --- โซนคอมเมนต์ (Comment) แบบไม่มีรายชื่อผู้ใช้จำลอง --- */
+.comment-section {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    padding-left: 10px;
+}
+
+.comment-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.comment-input-container {
+    display: block;
+    overflow: hidden; /* เคลียร์ float */
+}
+
+/* สร้างไอคอนคนสีดำด้วย CSS (ไม่ต้องใช้รูปภาพภายนอก) */
+.user-icon {
+    float: left;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.icon-head {
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.icon-body {
+    width: 36px;
+    height: 18px;
+    background-color: #000000;
+    border-radius: 18px 18px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 4.5px;
+}
+
+/* ช่องพิมพ์ข้อความขอบมนสีดำ */
+.comment-input {
+    float: left;
+    width: 350px; /* ความกว้างตามรูปแบบสั้นในภาพ */
+    height: 35px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 5px 15px;
+    font-size: 1rem;
+    outline: none;
+    margin-top: 5px; /* จัดตำแหน่งแนวตั้งให้กึ่งกลางพอดีกับไอคอน */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .cat-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .cat-container {
+        grid-template-columns: 1fr;
+    }
+    .comment-input {
+        width: calc(100% - 70px); /* ยืดหยุ่นตามหน้าจอมือถือ */
+    }
+}
